@@ -1,0 +1,22 @@
+ :root {
+  --color-background: oklch(14% .01 20);
+  --color-foreground: oklch(98% .003 60);
+  --color-card: oklch(18% .012 25);
+  --color-card-foreground: oklch(98% .003 60);
+  --color-primary: oklch(55% .22 25);
+  --color-primary-foreground: oklch(98% .003 60);
+  --color-secondary: oklch(22% .02 30);
+  --color-muted: oklch(22% .015 30);
+  --color-muted-foreground: oklch(70% .02 60);
+  --color-accent: oklch(78% .15 82);
+  --color-accent-foreground: oklch(14% .01 20);
+  --color-border: oklch(28% .02 30);
+  --color-input: oklch(22% .02 30);
+  --color-gold: oklch(82% .15 82);
+  --color-blood: oklch(48% .22 25);
+  --gradient-hero: linear-gradient(135deg, oklch(14% .01 20) 0%, oklch(20% .05 25) 50%, oklch(14% .01 20) 100%);
+  --gradient-gold: linear-gradient(135deg, oklch(78% .15 82), oklch(65% .18 60));
+  --gradient-red: linear-gradient(135deg, oklch(55% .22 25), oklch(35% .18 25));
+  --shadow-glow-red: 0 0 40px oklch(55% .22 25 / .4);
+  --shadow-glow-gold: 0 0 30px oklch(78% .15 82 / .3);
+}

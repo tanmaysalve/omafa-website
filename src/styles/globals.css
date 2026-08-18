@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import "./fonts.css";
+@import "./variables.css";
+
+@theme {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-card: var(--color-card);
+  --color-card-foreground: var(--color-card-foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-secondary: var(--color-secondary);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-border: var(--color-border);
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-display: Oswald, "Bebas Neue", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; min-width:320px; background:var(--color-background); color:var(--color-foreground); font-family:Inter,system-ui,sans-serif; }
+a { color:inherit; text-decoration:none; }
+.font-display { font-family: Oswald, "Bebas Neue", system-ui, sans-serif; }
+.text-gradient-gold { background:var(--gradient-gold); color:transparent; -webkit-background-clip:text; background-clip:text; }
+.text-gradient-red { background:linear-gradient(135deg,oklch(68% .24 25),oklch(50% .22 25)); color:transparent; -webkit-background-clip:text; background-clip:text; }
+.btn-hero { background:var(--gradient-red); color:var(--color-primary-foreground); box-shadow:var(--shadow-glow-red); transition:transform .2s, box-shadow .2s; }
+.btn-hero:hover { transform:translateY(-2px); box-shadow:0 0 60px oklch(55% .22 25 / .6); }
+.prose-copy { color:var(--color-muted-foreground); line-height:1.75; }
+
+.input { width:100%; border:1px solid var(--color-border); border-radius:.125rem; background:var(--color-input); color:var(--color-foreground); padding:.75rem .875rem; outline:none; transition:border-color .2s, box-shadow .2s; }
+.input:focus { border-color:var(--color-gold); box-shadow:0 0 0 2px oklch(78% .15 82 / .12); }
