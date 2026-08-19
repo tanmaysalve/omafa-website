@@ -1,2 +1,42 @@
-import { Link } from "react-router-dom"; import { ArrowRight, Check } from "lucide-react"; import type { Program } from "@/types";
-export function ProgramCard({program}:{program:Program}){return <article className="group overflow-hidden rounded-sm border border-border bg-card"><div className="relative aspect-[16/10] overflow-hidden"><img src={program.image} alt={program.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"/><div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent"/><span className="absolute left-4 top-4 font-display text-sm tracking-widest text-gold">{program.number}</span><h3 className="absolute bottom-4 left-4 font-display text-2xl font-semibold tracking-wide">{program.name}</h3></div><div className="p-5"><p className="text-sm leading-6 text-muted-foreground">{program.description}</p><ul className="mt-4 grid gap-2 text-sm">{program.bullets.map(b=><li key={b} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary"/>{b}</li>)}</ul><Link to="/contact" className="mt-5 inline-flex items-center gap-2 font-display text-sm font-bold uppercase tracking-wider text-gold hover:text-foreground">Book Free Trial <ArrowRight className="h-4 w-4"/></Link></div></article>}
+import { Link } from "react-router-dom";
+import { ArrowRight, Check } from "lucide-react";
+import type { Program } from "@/types";
+export function ProgramCard({ program }: { program: Program }) {
+  return (
+    <article className="group overflow-hidden rounded-sm border border-border bg-card">
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <img
+          src={program.image}
+          alt={program.name}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+        <span className="absolute left-4 top-4 font-display text-sm tracking-widest text-gold">
+          {program.number}
+        </span>
+        <h3 className="absolute bottom-4 left-4 font-display text-2xl font-semibold tracking-wide">
+          {program.name}
+        </h3>
+      </div>
+      <div className="p-5">
+        <p className="text-sm leading-6 text-muted-foreground">
+          {program.description}
+        </p>
+        <ul className="mt-4 grid gap-2 text-sm">
+          {program.bullets.map((b) => (
+            <li key={b} className="flex items-center gap-2">
+              <Check className="h-4 w-4 text-primary" />
+              {b}
+            </li>
+          ))}
+        </ul>
+        <Link
+          to="/contact" onClick={() => window.scrollTo(0,0)}
+          className="mt-5 inline-flex items-center gap-2 font-display text-sm font-bold uppercase tracking-wider text-gold hover:text-foreground"
+        >
+          Book Free Trial <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+    </article>
+  );
+}

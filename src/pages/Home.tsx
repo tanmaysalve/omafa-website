@@ -1,16 +1,420 @@
 import type { ReactNode } from "react";
-import { Link } from "react-router-dom"; import { ArrowRight, Check, Clock, ShieldCheck, Trophy, Users, Dumbbell, Star, ChevronDown } from "lucide-react"; import { programs, testimonials } from "@/data/site"; import { ProgramCard } from "@/components/ProgramCard"; import { SectionIntro } from "@/components/SectionIntro";
-const why=["Certified Coaches","International Fighter Experience","Beginner Friendly","Kids & Adults Batches","Women's Self Defence","Fitness & Weight Loss Programs","Personal Attention","Safe Training Environment","Flexible Batch Timings","Modern Equipment","Competition Training","Affordable Fees"];
-const faqs=["Who can join OMAFA?","Do beginners need prior experience?","Is a free trial class available?","Do you train women?","Can I lose weight here?","Can I prepare for competitions?"];
-export function Home(){return <div><section className="relative overflow-hidden border-b border-border"><img src="/images/hero.jpg" alt="" className="absolute inset-0 h-full w-full object-cover object-center opacity-30"/><div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(160,20,20,.35),transparent_45%),linear-gradient(90deg,#0e0d0d_5%,rgba(14,13,13,.78)_45%,rgba(14,13,13,.3))]"/><div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-4 py-20 sm:px-6"><div className="max-w-3xl"><p className="font-display text-sm tracking-[.25em] text-primary">ORIENTAL MARTIAL ARTS & FITNESS ACADEMY</p><h1 className="mt-4 font-display text-5xl font-black uppercase leading-[.95] tracking-tight sm:text-7xl">Become <span className="text-gradient-gold">Stronger.</span><br/>Fitter. <span className="text-gradient-red">Confident.</span></h1><p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">Navi Mumbai's professional academy for Karate, MMA, Kickboxing, Boxing, Muay Thai, Fitness & Self Defence. Train with international-level coaches in Seawoods.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Link to="/contact" className="btn-hero inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3.5 font-display font-bold uppercase tracking-wider">Book Free Trial <ArrowRight className="h-4 w-4"/></Link><a href="https://wa.me/918108973184?text=Hi%20OMAFA%2C%20I'd%20like%20to%20book%20a%20FREE%20trial%20class." target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-sm border border-border bg-background/60 px-6 py-3.5 font-display font-bold uppercase tracking-wider hover:border-gold hover:text-gold">WhatsApp Now</a></div><a href="tel:+918108973184" className="mt-5 inline-block font-display text-lg tracking-widest text-gold">8108973184</a></div></div></section>
-<section className="border-b border-border bg-card/40 py-5"><div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-4 text-center sm:grid-cols-4 sm:px-6">{["Kids (5+ Years)","Adults","Women","Pro Fighters"].map(x=><span key={x} className="font-display text-sm tracking-widest text-muted-foreground">{x}</span>)}</div></section>
-<section className="py-20 sm:py-24"><div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2"><div><SectionIntro eyebrow="About OMAFA" title={<>Martial Arts That <span className="text-gradient-gold">Transform Lives.</span></>}>At Oriental Martial Arts & Fitness Academy (OMAFA), we believe martial arts transform lives.</SectionIntro><p className="mt-6 prose-copy">Our academy helps students build confidence, discipline, strength, fitness and self-defence skills in a safe and motivating environment. Whether you want to improve fitness, lose weight, compete professionally or simply gain confidence, our experienced coaches provide structured training for every age and fitness level.</p><div className="mt-8 grid grid-cols-3 gap-3">{[["100+","Students Trained"],["15+","Years Experience"],["20+","Champions Coached"]].map(([n,l])=><div key={l} className="border-l border-primary pl-3"><strong className="font-display text-3xl text-gold">{n}</strong><p className="mt-1 text-xs text-muted-foreground">{l}</p></div>)}</div></div><div className="relative"><img src="/images/about-karate.jpg" alt="Karate training at OMAFA" className="w-full rounded-sm border border-border"/><div className="absolute -bottom-5 -left-5 hidden rounded-sm border border-gold/30 bg-card p-5 shadow-2xl sm:block"><Trophy className="h-7 w-7 text-gold"/><p className="mt-2 font-display text-sm tracking-widest">DISCIPLINE. EXCELLENCE.</p></div></div></div></section>
-<section className="border-y border-border bg-card/30 py-20 sm:py-24"><SectionIntro eyebrow="Our Programs" title={<>Train In <span className="text-gradient-gold">Every Discipline</span></>} >Ten world-class programs under one roof. Pick your path — or combine them.</SectionIntro><div className="mx-auto mt-12 grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4">{programs.map(p=><ProgramCard key={p.name} program={p}/>)}</div></section>
-<section className="py-20 sm:py-24"><div className="mx-auto max-w-7xl px-4 sm:px-6"><SectionIntro eyebrow="Meet Our Coaches" title={<>Learn From <span className="text-gradient-gold">Champions</span></>}/><div className="mt-12 grid gap-6 md:grid-cols-2"><CoachMini image="/images/coach-dipesh.jpg" name="Dipesh Rasal" role="Founder & MMA Head Coach" tags={["International Pro. MMA Fighter","Professional MMA Coach","Competition Preparation","Fitness Expert","Self Defence Instructor"]}/><CoachMini image="/images/coach-renuka.jpg" name="Renuka Rasal" role="Founder & KARATE Head Coach" tags={["5th Dan Black Belt","Kids Karate Specialist","Women's Self Defence Coach","Tournament Coach","Fitness Expert"]}/></div></div></section>
-<section className="border-y border-border bg-card/30 py-20"><div className="mx-auto max-w-7xl px-4 sm:px-6"><SectionIntro eyebrow="Why OMAFA" title={<>Built For <span className="text-gradient-red">Results.</span></>}/><div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{why.map((x,i)=><div key={x} className="flex items-center gap-3 rounded-sm border border-border bg-background/40 p-4"><Check className="h-5 w-5 text-gold"/><span className="text-sm">{x}</span></div>)}</div></div></section>
-<section className="py-20"><div className="mx-auto max-w-5xl px-4 sm:px-6"><SectionIntro eyebrow="Class Schedule" title={<>Train <span className="text-gradient-gold">Any Time.</span></>}/><div className="mt-12 grid gap-5 md:grid-cols-2"><Schedule icon={<span>🌅</span>} title="Morning Batch" time="7:00 AM – 10:00 AM" days="Open Tuesday to Sunday"/><Schedule icon={<span>🌙</span>} title="Evening Batch" time="6:00 PM – 10:00 PM" days="Open Monday to Saturday"/></div></div></section>
-<section className="border-y border-border bg-card/30 py-20"><div className="mx-auto max-w-7xl px-4 sm:px-6"><SectionIntro eyebrow="Student Voices" title={<>Rated <span className="text-gradient-gold">5 Stars</span> On Google</>}/><div className="mt-12 grid gap-5 lg:grid-cols-3">{testimonials.map(t=><article key={t.name} className="rounded-sm border border-border bg-background p-6"><div className="flex gap-1 text-gold">{[1,2,3,4,5].map(n=><Star key={n} className="h-4 w-4 fill-current"/> )}</div><p className="mt-5 text-sm leading-7 text-muted-foreground">“{t.quote}”</p><p className="mt-5 font-display tracking-widest text-gold">— {t.name}</p></article>)}</div></div></section>
-<section className="py-20"><div className="mx-auto max-w-3xl px-4 sm:px-6"><SectionIntro eyebrow="FAQ" title={<>Common <span className="text-gradient-gold">Questions</span></>}/><div className="mt-10 divide-y divide-border border-y border-border">{faqs.map(q=><details key={q} className="group py-5"><summary className="flex cursor-pointer list-none items-center justify-between font-display tracking-wide">{q}<ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180"/></summary><p className="pt-3 text-sm text-muted-foreground">Yes. Contact OMAFA to discuss your goals, training level and the best batch for you. Your first trial class is free.</p></details>)}</div></div></section>
-<section className="border-t border-border bg-gradient-to-br from-primary/10 via-background to-gold/5 py-20"><div className="mx-auto max-w-4xl px-4 text-center sm:px-6"><p className="font-display text-sm tracking-widest text-primary">— Visit Us</p><h2 className="mt-3 font-display text-5xl">Start Today. <span className="text-gradient-gold">Your First Class Is Free.</span></h2><p className="mt-5 text-muted-foreground">Haware Centurion Mall, Seawoods, Navi Mumbai</p><div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Link to="/contact" className="btn-hero rounded-sm px-6 py-3 font-display font-bold uppercase tracking-wider">Book Free Trial</Link><a href="https://wa.me/918108973184?text=Hi%20OMAFA%2C%20I'd%20like%20to%20book%20a%20FREE%20trial%20class." target="_blank" rel="noreferrer" className="rounded-sm border border-border px-6 py-3 font-display font-bold uppercase tracking-wider hover:border-gold hover:text-gold">WhatsApp</a></div></div></section></div>}
-function CoachMini({image,name,role,tags}:{image:string;name:string;role:string;tags:string[]}){return <article className="overflow-hidden rounded-sm border border-border bg-card"><div className="grid sm:grid-cols-[.8fr_1.2fr]"><img src={image} alt={name} className="h-full min-h-72 w-full object-cover"/><div className="p-6"><p className="font-display text-sm tracking-widest text-primary">{role}</p><h3 className="mt-2 font-display text-3xl">{name}</h3><ul className="mt-5 space-y-2 text-sm text-muted-foreground">{tags.map(t=><li key={t} className="flex gap-2"><Check className="h-4 w-4 shrink-0 text-gold"/>{t}</li>)}</ul></div></div></article>}
-function Schedule({icon,title,time,days}:{icon:ReactNode;title:string;time:string;days:string}){return <div className="rounded-sm border border-border bg-card p-7"><div className="flex items-center gap-3"><span className="text-2xl">{icon}</span><h3 className="font-display text-2xl">{title}</h3></div><p className="mt-4 font-display text-3xl text-gold">{time}</p><p className="mt-2 text-sm text-muted-foreground">{days}</p></div>}
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Check,
+  Clock,
+  ShieldCheck,
+  Trophy,
+  Users,
+  Dumbbell,
+  Star,
+  ChevronDown,
+} from "lucide-react";
+import { programs, testimonials } from "@/data/site";
+import { ProgramCard } from "@/components/ProgramCard";
+import { SectionIntro } from "@/components/SectionIntro";
+const why = [
+  "Certified Coaches",
+  "International Fighter Experience",
+  "Beginner Friendly",
+  "Kids & Adults Batches",
+  "Women's Self Defence",
+  "Fitness & Weight Loss Programs",
+  "Personal Attention",
+  "Safe Training Environment",
+  "Flexible Batch Timings",
+  "Modern Equipment",
+  "Competition Training",
+  "Affordable Fees",
+];
+const faqs = [
+  "Who can join OMAFA?",
+  "Do beginners need prior experience?",
+  "Is a free trial class available?",
+  "Do you train women?",
+  "Can I lose weight here?",
+  "Can I prepare for competitions?",
+];
+export function Home() {
+  return (
+    <div>
+      <section className="relative overflow-hidden border-b border-border">
+        <img
+          src="/images/hero.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-30"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(160,20,20,.35),transparent_45%),linear-gradient(90deg,#0e0d0d_5%,rgba(14,13,13,.78)_45%,rgba(14,13,13,.3))]" />
+        <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-4 py-20 sm:px-6">
+          <div className="max-w-3xl">
+            <p className="font-display text-sm tracking-[.25em] text-primary">
+              ORIENTAL MARTIAL ARTS & FITNESS ACADEMY
+            </p>
+            <h1 className="mt-4 font-display text-5xl font-black uppercase leading-[.95] tracking-tight sm:text-7xl">
+              Become <span className="text-gradient-gold">Stronger.</span>
+              <br />
+              Fitter. <span className="text-gradient-red">Confident.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+              Navi Mumbai's professional academy for Karate, MMA, Kickboxing,
+              Boxing, Muay Thai, Fitness & Self Defence. Train with
+              international-level coaches in Seawoods.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/contact"
+                className="btn-hero inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3.5 font-display font-bold uppercase tracking-wider"
+              >
+                Book Free Trial <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a
+                href="https://wa.me/918108973184?text=Hi%20OMAFA%2C%20I'd%20like%20to%20book%20a%20FREE%20trial%20class."
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-sm border border-border bg-background/60 px-6 py-3.5 font-display font-bold uppercase tracking-wider hover:border-gold hover:text-gold"
+              >
+                WhatsApp Now
+              </a>
+            </div>
+            <a
+              href="tel:+918108973184"
+              className="mt-5 inline-block font-display text-lg tracking-widest text-gold"
+            >
+              8108973184
+            </a>
+          </div>
+        </div>
+      </section>
+      <section className="border-b border-border bg-card/40 py-5">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-4 text-center sm:grid-cols-4 sm:px-6">
+          {["Kids (5+ Years)", "Adults", "Women", "Pro Fighters"].map((x) => (
+            <span
+              key={x}
+              className="font-display text-sm tracking-widest text-muted-foreground"
+            >
+              {x}
+            </span>
+          ))}
+        </div>
+      </section>
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+          <div>
+            <SectionIntro
+              eyebrow="About OMAFA"
+              title={
+                <>
+                  Martial Arts That{" "}
+                  <span className="text-gradient-gold">Transform Lives.</span>
+                </>
+              }
+            >
+              At Oriental Martial Arts & Fitness Academy (OMAFA), we believe
+              martial arts transform lives.
+            </SectionIntro>
+            <p className="mt-6 prose-copy">
+              Our academy helps students build confidence, discipline, strength,
+              fitness and self-defence skills in a safe and motivating
+              environment. Whether you want to improve fitness, lose weight,
+              compete professionally or simply gain confidence, our experienced
+              coaches provide structured training for every age and fitness
+              level.
+            </p>
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              {[
+                ["100+", "Students Trained"],
+                ["15+", "Years Experience"],
+                ["20+", "Champions Coached"],
+              ].map(([n, l]) => (
+                <div key={l} className="border-l border-primary pl-3">
+                  <strong className="font-display text-3xl text-gold">
+                    {n}
+                  </strong>
+                  <p className="mt-1 text-xs text-muted-foreground">{l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <img
+              src="/images/about-karate.jpg"
+              alt="Karate training at OMAFA"
+              className="w-full rounded-sm border border-border"
+            />
+            <div className="absolute -bottom-5 -left-5 hidden rounded-sm border border-gold/30 bg-card p-5 shadow-2xl sm:block">
+              <Trophy className="h-7 w-7 text-gold" />
+              <p className="mt-2 font-display text-sm tracking-widest">
+                DISCIPLINE. EXCELLENCE.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="border-y border-border bg-card/30 py-20 sm:py-24">
+        <SectionIntro
+          eyebrow="Our Programs"
+          title={
+            <>
+              Train In{" "}
+              <span className="text-gradient-gold">Every Discipline</span>
+            </>
+          }
+        >
+          Ten world-class programs under one roof. Pick your path — or combine
+          them.
+        </SectionIntro>
+        <div className="mx-auto mt-12 grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
+          {programs.map((p) => (
+            <ProgramCard key={p.name} program={p} />
+          ))}
+        </div>
+      </section>
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <SectionIntro
+            eyebrow="Meet Our Coaches"
+            title={
+              <>
+                Learn From <span className="text-gradient-gold">Champions</span>
+              </>
+            }
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <CoachMini
+              image="/images/coach-dipesh.jpg"
+              name="Dipesh Rasal"
+              role="Founder & MMA Head Coach"
+              tags={[
+                "International Pro. MMA Fighter",
+                "Professional MMA Coach",
+                "Competition Preparation",
+                "Fitness Expert",
+                "Self Defence Instructor",
+              ]}
+            />
+            <CoachMini
+              image="/images/coach-renuka.jpg"
+              name="Renuka Rasal"
+              role="Founder & KARATE Head Coach"
+              tags={[
+                "5th Dan Black Belt",
+                "Kids Karate Specialist",
+                "Women's Self Defence Coach",
+                "Tournament Coach",
+                "Fitness Expert",
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+      <section className="border-y border-border bg-card/30 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <SectionIntro
+            eyebrow="Why OMAFA"
+            title={
+              <>
+                Built For <span className="text-gradient-red">Results.</span>
+              </>
+            }
+          />
+          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {why.map((x, i) => (
+              <div
+                key={x}
+                className="flex items-center gap-3 rounded-sm border border-border bg-background/40 p-4"
+              >
+                <Check className="h-5 w-5 text-gold" />
+                <span className="text-sm">{x}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <SectionIntro
+            eyebrow="Class Schedule"
+            title={
+              <>
+                Train <span className="text-gradient-gold">Any Time.</span>
+              </>
+            }
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            <Schedule
+              icon={<span>🌅</span>}
+              title="Morning Batch"
+              time="7:00 AM – 10:00 AM"
+              days="Open Tuesday to Sunday"
+            />
+            <Schedule
+              icon={<span>🌙</span>}
+              title="Evening Batch"
+              time="6:00 PM – 10:00 PM"
+              days="Open Monday to Saturday"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="border-y border-border bg-card/30 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <SectionIntro
+            eyebrow="Student Voices"
+            title={
+              <>
+                Rated <span className="text-gradient-gold">5 Stars</span> On
+                Google
+              </>
+            }
+          />
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {testimonials.map((t) => (
+              <article
+                key={t.name}
+                className="rounded-sm border border-border bg-background p-6"
+              >
+                <div className="flex gap-1 text-gold">
+                  {[1, 2, 3, 4, 5].map((n) => (
+                    <Star key={n} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <p className="mt-5 text-sm leading-7 text-muted-foreground">
+                  “{t.quote}”
+                </p>
+                <p className="mt-5 font-display tracking-widest text-gold">
+                  — {t.name}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+          <SectionIntro
+            eyebrow="FAQ"
+            title={
+              <>
+                Common <span className="text-gradient-gold">Questions</span>
+              </>
+            }
+          />
+          <div className="mt-10 divide-y divide-border border-y border-border">
+            {faqs.map((q) => (
+              <details key={q} className="group py-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-display tracking-wide">
+                  {q}
+                  <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="pt-3 text-sm text-muted-foreground">
+                  Yes. Contact OMAFA to discuss your goals, training level and
+                  the best batch for you. Your first trial class is free.
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="border-t border-border bg-gradient-to-br from-primary/10 via-background to-gold/5 py-20">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <p className="font-display text-sm tracking-widest text-primary">
+            — Visit Us
+          </p>
+          <h2 className="mt-3 font-display text-5xl">
+            Start Today.{" "}
+            <span className="text-gradient-gold">
+              Your First Class Is Free.
+            </span>
+          </h2>
+          <p className="mt-5 text-muted-foreground">
+            <a
+              href="https://maps.app.goo.gl/QzpXY8eWdSCV3TUg7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold hover:underline"
+              aria-label="Open OMAFA location in Google Maps"
+            >
+              Haware Centurion Mall, Seawoods, Navi Mumbai
+            </a>
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link
+              to="/contact"
+              className="btn-hero rounded-sm px-6 py-3 font-display font-bold uppercase tracking-wider"
+            >
+              Book Free Trial
+            </Link>
+            <a
+              href="https://wa.me/918108973184?text=Hi%20OMAFA%2C%20I'd%20like%20to%20book%20a%20FREE%20trial%20class."
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-sm border border-border px-6 py-3 font-display font-bold uppercase tracking-wider hover:border-gold hover:text-gold"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+function CoachMini({
+  image,
+  name,
+  role,
+  tags,
+}: {
+  image: string;
+  name: string;
+  role: string;
+  tags: string[];
+}) {
+  return (
+    <article className="overflow-hidden rounded-sm border border-border bg-card">
+      <div className="grid sm:grid-cols-[.8fr_1.2fr]">
+        <img
+          src={image}
+          alt={name}
+          className="h-full min-h-72 w-full object-cover"
+        />
+        <div className="p-6">
+          <p className="font-display text-sm tracking-widest text-primary">
+            {role}
+          </p>
+          <h3 className="mt-2 font-display text-3xl">{name}</h3>
+          <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
+            {tags.map((t) => (
+              <li key={t} className="flex gap-2">
+                <Check className="h-4 w-4 shrink-0 text-gold" />
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </article>
+  );
+}
+function Schedule({
+  icon,
+  title,
+  time,
+  days,
+}: {
+  icon: ReactNode;
+  title: string;
+  time: string;
+  days: string;
+}) {
+  return (
+    <div className="rounded-sm border border-border bg-card p-7">
+      <div className="flex items-center gap-3">
+        <span className="text-2xl">{icon}</span>
+        <h3 className="font-display text-2xl">{title}</h3>
+      </div>
+      <p className="mt-4 font-display text-3xl text-gold">{time}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{days}</p>
+    </div>
+  );
+}

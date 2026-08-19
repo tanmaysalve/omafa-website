@@ -1,21 +1,155 @@
 import type { Program, Testimonial } from "@/types";
 export const programs: Program[] = [
- {number:"01",name:"Karate",image:"/images/prog-karate.jpg",description:"Traditional karate for kids and adults. Structured belt progression, discipline, tournament training and lifelong fundamentals.",bullets:["Kids from age 4","Belt system","Discipline & focus","Tournament training"]},
- {number:"02",name:"MMA (Mixed Martial Arts)",image:"/images/prog-mma.jpg",description:"Full-spectrum MMA under an international fighter. Striking, wrestling, grappling and cage preparation.",bullets:["Striking & clinch","Wrestling takedowns","BJJ grappling","Amateur & pro cage prep"]},
- {number:"03",name:"Kickboxing",image:"/images/prog-kickboxing.jpg",description:"Improve speed, strength and cardio while burning serious calories. Great for fitness and fat loss.",bullets:["Speed & agility","Cardio conditioning","Fat loss","Striking technique"]},
- {number:"04",name:"Boxing",image:"/images/prog-boxing.jpg",description:"Professional boxing training. Footwork, head movement, defence and knockout technique.",bullets:["Footwork drills","Head movement","Combinations","Sparring"]},
- {number:"05",name:"Muay Thai",image:"/images/prog-muaythai.jpg",description:"The art of eight limbs. Traditional Thai boxing with elbows, knees, clinch work and conditioning.",bullets:["Elbows & knees","Clinch work","Leg kicks","Fight conditioning"]},
- {number:"06",name:"Wrestling",image:"/images/prog-mma.jpg",description:"Build explosive takedowns, control on the mat and strong positional awareness through technical wrestling drills and live rounds.",bullets:["Takedowns","Top control","Scrambles","Conditioning & mat work"]},
- {number:"07",name:"Brazilian Jiu-Jitsu (BJJ)",image:"/images/prog-mma.jpg",description:"Learn safe, effective grappling skills with positional control, submissions and practical self-defence techniques for real-world application.",bullets:["Positions & transitions","Submissions","Grappling drills","Self-defence application"]},
- {number:"08",name:"Fitness & Weight Loss",image:"/images/prog-fitness.jpg",description:"HIIT, functional fitness and personal training designed for real results — fat loss, muscle tone and endurance.",bullets:["HIIT sessions","Fat loss programs","Muscle toning","1-on-1 personal training"]},
- {number:"09",name:"Women's Self Defence",image:"/images/prog-selfdefence.jpg",description:"Practical, scenario-based self defence for women. Build confidence, awareness and skills that work.",bullets:["Practical techniques","Confidence building","Real scenarios","Women-only batches"]},
- {number:"10",name:"Weapons Training",image:"/images/prog-weapons.jpg",description:"Traditional martial arts weapons training — learn the bo staff, nunchaku, sai, tonfa and kama with proper form, kata and control.",bullets:["Bo staff & nunchaku","Sai & tonfa","Traditional kata","Discipline & control"]}
+  {
+    number: "01",
+    name: "Karate",
+    image: "/images/prog-karate.jpg",
+    description:
+      "Traditional karate for kids and adults. Structured belt progression, discipline, tournament training and lifelong fundamentals.",
+    bullets: [
+      "Kids from age 4",
+      "Belt system",
+      "Discipline & focus",
+      "Tournament training",
+    ],
+  },
+  {
+    number: "02",
+    name: "MMA (Mixed Martial Arts)",
+    image: "/images/prog-mma.jpg",
+    description:
+      "Full-spectrum MMA under an international fighter. Striking, wrestling, grappling and cage preparation.",
+    bullets: [
+      "Striking & clinch",
+      "Wrestling takedowns",
+      "BJJ grappling",
+      "Amateur & pro cage prep",
+    ],
+  },
+  {
+    number: "03",
+    name: "Kickboxing",
+    image: "/images/prog-kickboxing.jpg",
+    description:
+      "Improve speed, strength and cardio while burning serious calories. Great for fitness and fat loss.",
+    bullets: [
+      "Speed & agility",
+      "Cardio conditioning",
+      "Fat loss",
+      "Striking technique",
+    ],
+  },
+  {
+    number: "04",
+    name: "Boxing",
+    image: "/images/prog-boxing.jpg",
+    description:
+      "Professional boxing training. Footwork, head movement, defence and knockout technique.",
+    bullets: ["Footwork drills", "Head movement", "Combinations", "Sparring"],
+  },
+  {
+    number: "05",
+    name: "Muay Thai",
+    image: "/images/prog-muaythai.jpg",
+    description:
+      "The art of eight limbs. Traditional Thai boxing with elbows, knees, clinch work and conditioning.",
+    bullets: [
+      "Elbows & knees",
+      "Clinch work",
+      "Leg kicks",
+      "Fight conditioning",
+    ],
+  },
+  {
+    number: "06",
+    name: "Wrestling",
+    image: "/images/wrestling.jpg",
+    description:
+      "Build explosive takedowns, control on the mat and strong positional awareness through technical wrestling drills and live rounds.",
+    bullets: [
+      "Takedowns",
+      "Top control",
+      "Scrambles",
+      "Conditioning & mat work",
+    ],
+  },
+  {
+    number: "07",
+    name: "Brazilian Jiu-Jitsu (BJJ)",
+    image: "/images/bjj.jpg",
+    description:
+      "Learn safe, effective grappling skills with positional control, submissions and practical self-defence techniques for real-world application.",
+    bullets: [
+      "Positions & transitions",
+      "Submissions",
+      "Grappling drills",
+      "Self-defence application",
+    ],
+  },
+  {
+    number: "08",
+    name: "Fitness & Weight Loss",
+    image: "/images/prog-fitness.jpg",
+    description:
+      "HIIT, functional fitness and personal training designed for real results — fat loss, muscle tone and endurance.",
+    bullets: [
+      "HIIT sessions",
+      "Fat loss programs",
+      "Muscle toning",
+      "1-on-1 personal training",
+    ],
+  },
+  {
+    number: "09",
+    name: "Women's Self Defence",
+    image: "/images/prog-selfdefence.jpg",
+    description:
+      "Practical, scenario-based self defence for women. Build confidence, awareness and skills that work.",
+    bullets: [
+      "Practical techniques",
+      "Confidence building",
+      "Real scenarios",
+      "Women-only batches",
+    ],
+  },
+  {
+    number: "10",
+    name: "Weapons Training",
+    image: "/images/prog-weapons.jpg",
+    description:
+      "Traditional martial arts weapons training — learn the bo staff, nunchaku, sai, tonfa and kama with proper form, kata and control.",
+    bullets: [
+      "Bo staff & nunchaku",
+      "Sai & tonfa",
+      "Traditional kata",
+      "Discipline & control",
+    ],
+  },
 ];
 export const testimonials: Testimonial[] = [
- {name:"Monali Lalwani",quote:"I highly recommend Oriental Martial Arts & Fitness Academy to anyone looking for MMA Classes in Seawoods or Karate Classes in Seawoods. The coaches are experienced, patient, and give personal attention to every student, whether you're a beginner or advanced. It's not just a martial arts academy but one of the best Fitness Academies in Seawoods. The training is excellent for improving fitness, building confidence, learning self-defense, and achieving weight loss goals. The atmosphere is motivating, disciplined, and welcoming for both kids and adults."},
- {name:"Pallavi Puri",quote:"OMAFA MMA is one of the best places to learn Mixed Martial Arts (MMA). The training is well-structured, the environment is motivating, and Dipesh Sir creates a great learning experience for everyone. Dipesh Sir's teaching technique is excellent. He explains every move clearly, focuses on strong fundamentals, and gives personal attention to each student, helping them improve with every session. Whether you're a beginner or looking to improve your MMA skills, self-defense, or overall fitness, I highly recommend OMAFA MMA. It's a great place to train, learn, and grow."},
- {name:"Adv. Lalita More",quote:"I have been practicing here for about three or four year and Sensei Renuka mam and coach Dipesh sir focus on specific positive impacts like building your confidence, teaching discipline/patience, improving physical skills, and fostering a supportive atmosphere, mentioning how they explain things clearly, practice with you, and see each student's potential, making you feel respected and motivated. Sensei, your dedication to teaching not just moves but also patience, respect, and focus has profoundly impacted me. I feel more confident and disciplined in all aspects of my life."}
+  {
+    name: "Monali Lalwani",
+    quote:
+      "I highly recommend Oriental Martial Arts & Fitness Academy to anyone looking for MMA Classes in Seawoods or Karate Classes in Seawoods. The coaches are experienced, patient, and give personal attention to every student, whether you're a beginner or advanced. It's not just a martial arts academy but one of the best Fitness Academies in Seawoods. The training is excellent for improving fitness, building confidence, learning self-defense, and achieving weight loss goals. The atmosphere is motivating, disciplined, and welcoming for both kids and adults.",
+  },
+  {
+    name: "Pallavi Puri",
+    quote:
+      "OMAFA MMA is one of the best places to learn Mixed Martial Arts (MMA). The training is well-structured, the environment is motivating, and Dipesh Sir creates a great learning experience for everyone. Dipesh Sir's teaching technique is excellent. He explains every move clearly, focuses on strong fundamentals, and gives personal attention to each student, helping them improve with every session. Whether you're a beginner or looking to improve your MMA skills, self-defense, or overall fitness, I highly recommend OMAFA MMA. It's a great place to train, learn, and grow.",
+  },
+  {
+    name: "Adv. Lalita More",
+    quote:
+      "I have been practicing here for about three or four year and Sensei Renuka mam and coach Dipesh sir focus on specific positive impacts like building your confidence, teaching discipline/patience, improving physical skills, and fostering a supportive atmosphere, mentioning how they explain things clearly, practice with you, and see each student's potential, making you feel respected and motivated. Sensei, your dedication to teaching not just moves but also patience, respect, and focus has profoundly impacted me. I feel more confident and disciplined in all aspects of my life.",
+  },
 ];
 export const gallery = [
- ["/images/prog-mma.jpg","MMA"],["/images/prog-karate.jpg","Kids Karate"],["/images/coach-dipesh.jpg","Sparring"],["/images/prog-boxing.jpg","Boxing"],["/images/prog-muaythai.jpg","Muay Thai"],["/images/prog-kickboxing.jpg","Kickboxing"],["/images/prog-fitness.jpg","Fitness"],["/images/prog-selfdefence.jpg","Self Defence"]
+  ["/images/prog-mma.jpg", "MMA"],
+  ["/images/prog-karate.jpg", "Kids Karate"],
+  ["/images/coach-dipesh.jpg", "Sparring"],
+  ["/images/prog-boxing.jpg", "Boxing"],
+  ["/images/prog-muaythai.jpg", "Muay Thai"],
+  ["/images/prog-kickboxing.jpg", "Kickboxing"],
+  ["/images/prog-fitness.jpg", "Fitness"],
+  ["/images/prog-selfdefence.jpg", "Self Defence"],
 ];

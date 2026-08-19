@@ -1,3 +1,110 @@
-import { useState } from "react"; import { Link, NavLink } from "react-router-dom"; import { Menu, X, Phone } from "lucide-react";
-const nav=[["/","Home"],["/about","About"],["/programs","Programs"],["/coaches","Coaches"],["/gallery","Gallery"],["/contact","Contact"]] as const;
-export function Header(){const [open,setOpen]=useState(false); return <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl"><div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6"><Link to="/" className="flex shrink-0 items-center gap-2"><img src="/logo.png" alt="OMAFA Logo" className="h-10 w-auto object-contain"/><span className="font-display text-xl font-black tracking-wider text-gradient-gold">OMAFA</span></Link><nav className="hidden items-center gap-1 lg:flex">{nav.map(([to,label])=><NavLink key={to} to={to} end={to==="/"} className={({isActive})=>`rounded-sm px-3 py-2 font-display text-sm font-semibold tracking-wider transition-colors ${isActive?"bg-secondary text-gold":"text-muted-foreground hover:bg-secondary hover:text-gold"}`}>{label}</NavLink>)}</nav><div className="hidden items-center gap-3 lg:flex"><a href="tel:+918108973184" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold"><Phone className="h-4 w-4"/><span>8108973184</span></a><Link to="/contact" className="btn-hero rounded-sm px-4 py-2 font-display text-sm font-bold uppercase tracking-wider">Free Trial</Link></div><button aria-label="Toggle menu" onClick={()=>setOpen(!open)} className="rounded-sm border border-border p-2 lg:hidden">{open?<X className="h-5 w-5"/>:<Menu className="h-5 w-5"/>}</button></div>{open&&<div className="border-t border-border bg-background lg:hidden"><nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">{nav.map(([to,label])=><NavLink key={to} to={to} end={to==="/"} onClick={()=>setOpen(false)} className={({isActive})=>`rounded-sm px-3 py-3 font-display font-semibold tracking-wider ${isActive?"bg-secondary text-gold":"text-muted-foreground hover:bg-secondary hover:text-gold"}`}>{label}</NavLink>)}<Link to="/contact" onClick={()=>setOpen(false)} className="btn-hero mt-2 rounded-sm px-4 py-3 text-center font-display font-bold uppercase tracking-wider">Book Free Trial</Link></nav></div>}</header>}
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Menu, X, Phone, Instagram, Facebook } from "lucide-react";
+const nav = [
+  ["/", "Home"],
+  ["/about", "About"],
+  ["/programs", "Programs"],
+  ["/coaches", "Coaches"],
+  ["/gallery", "Gallery"],
+  ["/contact", "Contact"],
+] as const;
+export function Header() {
+  const [open, setOpen] = useState(false);
+  return (
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link to="/" className="flex shrink-0 items-center gap-2">
+          <img
+            src="/logo.png"
+            alt="OMAFA Logo"
+            className="h-10 w-auto object-contain"
+          />
+          <span className="font-display text-xl font-black tracking-wider text-gradient-gold">
+            OMAFA
+          </span>
+        </Link>
+        <nav className="hidden items-center gap-1 lg:flex">
+          {nav.map(([to, label]) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === "/"}
+              className={({ isActive }) =>
+                `rounded-sm px-3 py-2 font-display text-sm font-semibold tracking-wider transition-colors ${isActive ? "bg-secondary text-gold" : "text-muted-foreground hover:bg-secondary hover:text-gold"}`
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href="https://www.instagram.com/omafa_2023/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit OMAFA on Instagram"
+            className="text-muted-foreground hover:text-gold"
+          >
+            <Instagram className="h-4 w-4" />
+          </a>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit OMAFA on Facebook"
+            className="text-muted-foreground hover:text-gold"
+          >
+            <Facebook className="h-4 w-4" />
+          </a>
+          <a
+            href="tel:+918108973184"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold"
+          >
+            <Phone className="h-4 w-4" />
+            <span>8108973184</span>
+          </a>
+          <Link
+            to="/contact"
+            className="btn-hero rounded-sm px-4 py-2 font-display text-sm font-bold uppercase tracking-wider"
+          >
+            Free Trial
+          </Link>
+        </div>
+        <button
+          aria-label="Toggle menu"
+          onClick={() => setOpen(!open)}
+          className="rounded-sm border border-border p-2 lg:hidden"
+        >
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+      </div>
+      {open && (
+        <div className="border-t border-border bg-background lg:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
+            {nav.map(([to, label]) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={to === "/"}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `rounded-sm px-3 py-3 font-display font-semibold tracking-wider ${isActive ? "bg-secondary text-gold" : "text-muted-foreground hover:bg-secondary hover:text-gold"}`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="btn-hero mt-2 rounded-sm px-4 py-3 text-center font-display font-bold uppercase tracking-wider"
+            >
+              Book Free Trial
+            </Link>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+}
