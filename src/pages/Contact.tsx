@@ -122,8 +122,8 @@ export function Contact() {
               Evening: 6:00 PM – 10:00 PM
             </Info>
             <Info icon={<Mail />} title="Email">
-              <a href="mailto:info@omafa.in" className="hover:text-gold">
-                info@omafa.in
+              <a href="mailto:omafa2023@gmail.com" className="hover:text-gold">
+                omafa2023@gmail.com
               </a>
             </Info>
           </aside>
