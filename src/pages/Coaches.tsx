@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { PageHero } from "@/components/PageHero";
 const coaches = [
   {
-    image: "/images/coach-renuka.jpg",
-    role: "Founder & Head Karate Coach",
+    image: "/images/coach-renuka_1.jpg",
+    role: "Founder and Karate Head Coach Shihan",
     name: "Renuka Rasal",
     intro:
       "Renuka Rasal is a 5th Dan Black Belt and OMAFA's Head Karate Coach. She specialises in kids' karate and women's self defence, with multiple tournament-winning students under her guidance.",
     tags: [
-      "5th Dan Black Belt",
+      "International 5th Dan Black Belt",
       "Kids Karate Specialist",
       "Women's Self Defence Coach",
       "Tournament Coach",
@@ -27,6 +27,20 @@ const coaches = [
       "Competition Preparation",
       "Fitness Expert",
       "Certified Self Defence Instructor",
+    ],
+  },
+  {
+    image: "/images/coach-krishna.jpg",
+    role: "Grand master & Chief Examiner Hanshi",
+    name: "Krishna Chityal",
+    intro:
+      "Krishna Chityal is a Grand master and Chief Examiner Hanshi with decades of experience in martial arts. His expertise spans various disciplines, making him a sought-after instructor for both beginners and advanced practitioners.",
+    tags: [
+      "International 8th Dan Black Belt",
+      "35 yrs of expertise",
+      "Armed and Unarmed Self Defence Expert",
+      "Martial Arts Weapons coach",
+      "Black belt Training Coach",
     ],
   },
 ];
