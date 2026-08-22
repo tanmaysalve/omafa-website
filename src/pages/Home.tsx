@@ -196,9 +196,9 @@ export function Home() {
             <CoachMini
               image="/images/coach-renuka.jpg"
               name="Renuka Rasal"
-              role="Founder & KARATE Head Coach"
+              role="Founder and Karate Head Coach Shihan"
               tags={[
-                "5th Dan Black Belt",
+                "International 5th Dan Black Belt",
                 "Kids Karate Specialist",
                 "Women's Self Defence Coach",
                 "Tournament Coach",
