@@ -182,6 +182,18 @@ export function Home() {
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <CoachMini
+              image="/images/coach-renuka_1.jpg"
+              name="Shihan Renuka Rasal"
+              role="Founder and Karate Head Coach"
+              tags={[
+                "International 5th Dan Black Belt",
+                "Kids Karate Specialist",
+                "Women's Self Defence Coach",
+                "Tournament Coach",
+                "Fitness Expert",
+              ]}
+            />
+            <CoachMini
               image="/images/coach-dipesh.jpg"
               name="Dipesh Rasal"
               role="Founder & MMA Head Coach"
@@ -194,15 +206,15 @@ export function Home() {
               ]}
             />
             <CoachMini
-              image="/images/coach-renuka.jpg"
-              name="Renuka Rasal"
-              role="Founder and Karate Head Coach Shihan"
+              image="/images/coach-krishna.jpg"
+              name="Hanshi Krishna Chityal"
+              role="Grand master & Chief Examiner"
               tags={[
-                "International 5th Dan Black Belt",
-                "Kids Karate Specialist",
-                "Women's Self Defence Coach",
-                "Tournament Coach",
-                "Fitness Expert",
+                "International 8th Dan Black Belt",
+                "35 yrs of expertise",
+                "Armed and Unarmed Self Defence Expert",
+                "Martial Arts Weapons coach",
+                "Black belt Training Coach",
               ]}
             />
           </div>
