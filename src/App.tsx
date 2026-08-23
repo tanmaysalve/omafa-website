@@ -1,11 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "@/components/Layout";
+import { ScrollToTop } from "@/components/ScrollToTop";
+
 import { Home } from "@/pages/Home";
 import { About } from "@/pages/About";
 import { Programs } from "@/pages/Programs";
 import { Coaches } from "@/pages/Coaches";
 import { Gallery } from "@/pages/Gallery";
 import { Contact } from "@/pages/Contact";
+
 function NotFound() {
   return (
     <div className="flex min-h-[70vh] items-center justify-center px-4 text-center">
@@ -23,16 +26,19 @@ function NotFound() {
 }
 export default function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/programs" element={<Programs />} />
-        <Route path="/coaches" element={<Coaches />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/coaches" element={<Coaches />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </>
   );
 }

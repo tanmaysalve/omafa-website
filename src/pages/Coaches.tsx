@@ -5,7 +5,7 @@ const coaches = [
   {
     image: "/images/coach-renuka_1.jpg",
     role: "Founder and Karate Head Coach",
-    name: "Shihan Renuka Rasal",
+    name: "Shihan. Renuka Rasal",
     intro:
       "Renuka Rasal is a 5th Dan Black Belt and OMAFA's Head Karate Coach. She specialises in kids' karate and women's self defence, with multiple tournament-winning students under her guidance.",
     tags: [
@@ -33,7 +33,7 @@ const coaches = [
   {
     image: "/images/coach-krishna.jpg",
     role: "Grand master & Chief Examiner",
-    name: "Hanshi Krishna Chityal",
+    name: "Hanshi. Krishna Chityal",
     intro:
       "Krishna Chityal is a Grand master and Chief Examiner Hanshi with decades of experience in martial arts. His expertise spans various disciplines, making him a sought-after instructor for both beginners and advanced practitioners.",
     tags: [

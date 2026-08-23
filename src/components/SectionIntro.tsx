@@ -1,2 +1,26 @@
 import type { ReactNode } from "react";
-export function SectionIntro({eyebrow,title,children}:{eyebrow:string;title:ReactNode;children?:ReactNode}){return <div className="mx-auto max-w-4xl px-4 text-center sm:px-6"><p className="font-display text-sm tracking-widest text-primary">— {eyebrow}</p><h2 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">{title}</h2>{children&&<p className="mx-auto mt-5 max-w-2xl text-muted-foreground">{children}</p>}</div>}
+export function SectionIntro({
+  eyebrow,
+  title,
+  children,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  children?: ReactNode;
+}) {
+  return (
+    <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+      <p className="font-display text-sm tracking-widest text-primary">
+        — {eyebrow}
+      </p>
+      <h2 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
+        {title}
+      </h2>
+      {children && (
+        <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
+          {children}
+        </p>
+      )}
+    </div>
+  );
+}

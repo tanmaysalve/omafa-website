@@ -183,7 +183,7 @@ export function Home() {
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <CoachMini
               image="/images/coach-renuka_1.jpg"
-              name="Shihan Renuka Rasal"
+              name="Shihan. Renuka Rasal"
               role="Founder and Karate Head Coach"
               tags={[
                 "International 5th Dan Black Belt",
@@ -207,7 +207,7 @@ export function Home() {
             />
             <CoachMini
               image="/images/coach-krishna.jpg"
-              name="Hanshi Krishna Chityal"
+              name="Hanshi. Krishna Chityal"
               role="Grand master & Chief Examiner"
               tags={[
                 "International 8th Dan Black Belt",

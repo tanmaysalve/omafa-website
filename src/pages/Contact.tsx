@@ -97,7 +97,7 @@ export function Contact() {
           <aside className="space-y-4">
             <Info icon={<MapPin />} title="Location">
               <a
-                href="https://maps.app.goo.gl/QzpXY8eWdSCV3TUg7"
+                href="https://maps.app.goo.gl/n1RYMwywVb5Ltnpk8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold hover:underline"
