@@ -5,9 +5,9 @@ const coaches = [
   {
     image: "/images/coach-renuka_1.jpg",
     role: "Founder and Karate Head Coach",
-    name: "Shihan. Renuka Rasal",
+    name: "Shihan. Renukka Rasal",
     intro:
-      "Renuka Rasal is a 5th Dan Black Belt and OMAFA's Head Karate Coach. She specialises in kids' karate and women's self defence, with multiple tournament-winning students under her guidance.",
+      "Renukka Rasal is a 5th Dan Black Belt and OMAFA's Head Karate Coach. She specialises in kids' karate and women's self defence, with multiple tournament-winning students under her guidance.",
     tags: [
       "International 5th Dan Black Belt",
       "Kids Karate Specialist",
