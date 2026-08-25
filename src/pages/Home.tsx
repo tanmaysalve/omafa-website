@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -10,6 +10,8 @@ import {
   Dumbbell,
   Star,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { programs, testimonials } from "@/data/site";
 import { ProgramCard } from "@/components/ProgramCard";
@@ -35,6 +37,24 @@ const faqs = [
   "Do you train women?",
   "Can I lose weight here?",
   "Can I prepare for competitions?",
+];
+const aboutSlides = [
+  {
+    src: "/images/about-karate.jpg",
+    alt: "Karate training at OMAFA",
+  },
+  {
+    src: "/images/gallery-mma-1.jpeg",
+    alt: "MMA training at OMAFA",
+  },
+  {
+    src: "/images/gallery-karate-1.jpeg",
+    alt: "Kids karate class at OMAFA",
+  },
+  {
+    src: "/images/gallery-mat-1.jpeg",
+    alt: "Martial arts training at OMAFA",
+  },
 ];
 export function Home() {
   return (
@@ -136,19 +156,7 @@ export function Home() {
               ))}
             </div>
           </div>
-          <div className="relative">
-            <img
-              src="/images/about-karate.jpg"
-              alt="Karate training at OMAFA"
-              className="w-full rounded-sm border border-border"
-            />
-            <div className="absolute -bottom-5 -left-5 hidden rounded-sm border border-gold/30 bg-card p-5 shadow-2xl sm:block">
-              <Trophy className="h-7 w-7 text-gold" />
-              <p className="mt-2 font-display text-sm tracking-widest">
-                DISCIPLINE. EXCELLENCE.
-              </p>
-            </div>
-          </div>
+          <ImageCarousel />
         </div>
       </section>
       <section className="border-y border-border bg-card/30 py-20 sm:py-24">
@@ -368,6 +376,75 @@ export function Home() {
           </div>
         </div>
       </section>
+    </div>
+  );
+}
+function ImageCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setCurrentIndex((index) => (index + 1) % aboutSlides.length);
+    }, 2000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const showPrevious = () => {
+    setCurrentIndex(
+      (index) => (index - 1 + aboutSlides.length) % aboutSlides.length,
+    );
+  };
+
+  const showNext = () => {
+    setCurrentIndex((index) => (index + 1) % aboutSlides.length);
+  };
+
+  return (
+    <div className="relative">
+      <div className="aspect-4/3 overflow-hidden rounded-sm border border-border">
+        <img
+          src={aboutSlides[currentIndex].src}
+          alt={aboutSlides[currentIndex].alt}
+          className="h-full w-full object-cover transition-opacity duration-500"
+        />
+      </div>
+      <button
+        type="button"
+        onClick={showPrevious}
+        aria-label="Show previous image"
+        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-sm border border-white/30 bg-black/60 p-2 text-white hover:border-gold hover:text-gold"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        type="button"
+        onClick={showNext}
+        aria-label="Show next image"
+        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-sm border border-white/30 bg-black/60 p-2 text-white hover:border-gold hover:text-gold"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+      <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+        {aboutSlides.map((slide, index) => (
+          <button
+            key={slide.src}
+            type="button"
+            onClick={() => setCurrentIndex(index)}
+            aria-label={`Show image ${index + 1}`}
+            aria-current={index === currentIndex}
+            className={`h-2 w-2 rounded-full border border-white ${
+              index === currentIndex ? "bg-gold" : "bg-transparent"
+            }`}
+          />
+        ))}
+      </div>
+      <div className="absolute -bottom-5 -left-5 hidden rounded-sm border border-gold/30 bg-card p-5 shadow-2xl sm:block">
+        <Trophy className="h-7 w-7 text-gold" />
+        <p className="mt-2 font-display text-sm tracking-widest">
+          DISCIPLINE. EXCELLENCE.
+        </p>
+      </div>
     </div>
   );
 }
