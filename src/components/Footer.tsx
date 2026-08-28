@@ -65,7 +65,7 @@ export function Footer() {
             <li className="flex gap-2">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               <a
-                href="https://maps.app.goo.gl/n1RYMwywVb5Ltnpk8"
+                href="https://maps.app.goo.gl/aHGcHkbTDKV7xtQFA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold hover:underline"

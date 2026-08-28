@@ -95,7 +95,7 @@ export function Contact() {
             </button>
           </form>
           <aside className="space-y-4">
-            <Info icon={<MapPin />} title="Location">
+            <Info icon={<MapPin />} title="Location (Tap for Maps)">
               <a
                 href="https://maps.app.goo.gl/aHGcHkbTDKV7xtQFA"
                 target="_blank"

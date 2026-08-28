@@ -31,12 +31,50 @@ const why = [
   "Affordable Fees",
 ];
 const faqs = [
-  "Who can join OMAFA?",
-  "Do beginners need prior experience?",
-  "Is a free trial class available?",
-  "Do you train women?",
-  "Can I lose weight here?",
-  "Can I prepare for competitions?",
+  {
+    question: "Who can join OMAFA?",
+    answer: "Anyone can join OMAFA, including children, teenagers, and adults of all fitness levels. You do not need any prior martial arts experience, as programs are tailored for both absolute beginners and advanced athletes."
+  },
+  {
+    question: "Do beginners need prior experience?",
+    answer: "No, beginners do not need any prior experience to join OMAFA. The training programs are specifically designed to teach you all fundamentals from scratch at your own pace."
+  },
+  {
+    question: "Is a free trial class available?",
+    answer: (
+      <>
+        Yes, your first trial class at OMAFA is completely free. You can book your free slot online or message the academy directly via the{" "}
+        <a href="https://omafa.in/contact" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
+          OMAFA Official Contact Page
+        </a>
+        {" "}or their{" "}
+        <a href="https://www.instagram.com/omafa_2023/" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
+          Instagram Page
+        </a>
+        {" "}to get scheduled
+      </>
+    )
+  },
+  {
+    question: "Do you train women?",
+    answer: "Yes, OMAFA explicitly welcomes and trains women in Mixed Martial Arts (MMA), Karate, and fitness conditioning. The academy provides a safe, supportive environment focused on building strength, confidence, and practical self-defense skills for women of all fitness levels."
+  },
+  {
+    question: "Can I lose weight here?",
+    answer: "Yes, you can absolutely lose weight training at OMAFA. The high-intensity nature of MMA, Karate, and functional fitness conditioning burns a massive amount of calories while building lean muscle and boosting your metabolism."
+  },
+  {
+    question: "Can I prepare for competitions?",
+    answer: (
+      <>
+        Yes, you can fully prepare for amateur and professional competitions at{" "}
+        <a href="https://omafa.in/" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
+          OMAFA
+        </a>
+        . The academy provides specialized striking, grappling, and tournament preparation, alongside dedicated training for local, district, and open karate competitions.
+      </>
+    )
+  },
 ];
 const aboutSlides = [
   {
@@ -143,9 +181,9 @@ export function Home() {
             </p>
             <div className="mt-8 grid grid-cols-3 gap-3">
               {[
-                ["100+", "Students Trained"],
+                ["200+", "Students Trained"],
                 ["15+", "Years Experience"],
-                ["20+", "Champions Coached"],
+                ["40+", "Champions Coached"],
               ].map(([n, l]) => (
                 <div key={l} className="border-l border-primary pl-3">
                   <strong className="font-display text-3xl text-gold">
@@ -321,15 +359,14 @@ export function Home() {
             }
           />
           <div className="mt-10 divide-y divide-border border-y border-border">
-            {faqs.map((q) => (
-              <details key={q} className="group py-5">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between font-display tracking-wide">
-                  {q}
+                  {faq.question}
                   <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
                 </summary>
                 <p className="pt-3 text-sm text-muted-foreground">
-                  Yes. Contact OMAFA to discuss your goals, training level and
-                  the best batch for you. Your first trial class is free.
+                  {faq.answer}
                 </p>
               </details>
             ))}
@@ -385,7 +422,7 @@ function ImageCarousel() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       setCurrentIndex((index) => (index + 1) % aboutSlides.length);
-    }, 2000);
+    }, 850);
 
     return () => window.clearInterval(interval);
   }, []);
