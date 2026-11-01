@@ -1,7 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight,
   Check,
   Clock,
   ShieldCheck,
@@ -12,6 +11,7 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
+  MessageCircle,
 } from "lucide-react";
 import { programs, testimonials } from "@/data/site";
 import { ProgramCard } from "@/components/ProgramCard";
@@ -104,44 +104,97 @@ export function Home() {
           className="absolute inset-0 h-full w-full object-cover object-center opacity-30"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(160,20,20,.35),transparent_45%),linear-gradient(90deg,#0e0d0d_5%,rgba(14,13,13,.78)_45%,rgba(14,13,13,.3))]" />
-        <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-4 py-20 sm:px-6">
-          <div className="max-w-3xl">
+        <div className="relative mx-auto grid min-h-[620px] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_.8fr] lg:gap-14">
+          <div>
             <p className="font-display text-sm tracking-[.25em] text-primary">
               ORIENTAL MARTIAL ARTS & FITNESS ACADEMY
             </p>
-            <h1 className="mt-4 font-display text-5xl font-black uppercase leading-[.95] tracking-tight sm:text-7xl">
+            <h1 className="mt-4 font-display text-4xl font-black uppercase leading-[.95] tracking-tight sm:text-5xl lg:text-6xl">
               Become <span className="text-gradient-gold">Stronger.</span>
               <br />
               Fitter. <span className="text-gradient-red">Confident.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">
               Navi Mumbai's professional academy for Karate, MMA, Kickboxing,
               Boxing, Muay Thai, Fitness & Self Defence. Train with
               international-level coaches in Seawoods.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                to="/contact"
-                className="btn-hero inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3.5 font-display font-bold uppercase tracking-wider"
-              >
-                Book Free Trial <ArrowRight className="h-4 w-4" />
-              </Link>
-              <a
-                href="https://wa.me/918108973184?text=Hi%20OMAFA%2C%20I'd%20like%20to%20book%20a%20FREE%20trial%20class."
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-sm border border-border bg-background/60 px-6 py-3.5 font-display font-bold uppercase tracking-wider hover:border-gold hover:text-gold"
-              >
-                WhatsApp Now
-              </a>
-            </div>
             <a
               href="tel:+918108973184"
-              className="mt-5 inline-block font-display text-lg tracking-widest text-gold"
+              className="mt-6 inline-block font-display text-lg tracking-widest text-gold"
             >
               8108973184
             </a>
           </div>
+          <form
+            className="rounded-sm border border-border bg-card/90 p-5 shadow-2xl sm:p-7"
+            onSubmit={(event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              const message = [
+                "Hi OMAFA, I'd like to book a FREE trial class.",
+                `Name: ${formData.get("name")}`,
+                `Phone: ${formData.get("phone")}`,
+                `Program: ${formData.get("program")}`,
+              ].join("\n");
+              window.open(
+                `https://wa.me/918108973184?text=${encodeURIComponent(message)}`,
+                "_blank",
+                "noopener,noreferrer",
+              );
+            }}
+          >
+            <h2 className="font-display text-2xl font-bold uppercase tracking-wide">
+              Book Your Free Trial
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Tell us what you're interested in and we'll be in touch.
+            </p>
+            <div className="mt-5 space-y-4">
+              <label className="block space-y-2 text-sm font-medium">
+                <span>Full Name</span>
+                <input
+                  className="input"
+                  name="name"
+                  autoComplete="name"
+                  minLength={2}
+                  required
+                />
+              </label>
+              <label className="block space-y-2 text-sm font-medium">
+                <span>Phone (WhatsApp)</span>
+                <input
+                  className="input"
+                  name="phone"
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  minLength={8}
+                  required
+                />
+              </label>
+              <label className="block space-y-2 text-sm font-medium">
+                <span>Interested Program</span>
+                <select className="input" name="program" required defaultValue="">
+                  <option value="" disabled>
+                    Select a program
+                  </option>
+                  {programs.map((program) => (
+                    <option key={program.number} value={program.name}>
+                      {program.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <button
+              className="btn-hero mt-5 inline-flex w-full items-center justify-center gap-2 rounded-sm px-5 py-3 font-display font-bold uppercase tracking-wider"
+              type="submit"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Send via WhatsApp
+            </button>
+          </form>
         </div>
       </section>
       <section className="border-b border-border bg-card/40 py-5">
