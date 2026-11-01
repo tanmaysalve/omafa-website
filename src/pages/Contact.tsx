@@ -97,7 +97,7 @@ export function Contact() {
           <aside className="space-y-4">
             <Info icon={<MapPin />} title="Location (Tap for Maps)">
               <a
-                href="https://maps.app.goo.gl/aHGcHkbTDKV7xtQFA"
+                href="intent://maps.app.goo.gl/aHGcHkbTDKV7xtQFA#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=https%3A%2F%2Fmaps.app.goo.gl%2FaHGcHkbTDKV7xtQFA;end"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold hover:underline"
